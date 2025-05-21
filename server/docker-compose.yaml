@@ -49,10 +49,10 @@ services:
       - mem0_network
     healthcheck:
       test: wget http://localhost:7687 || exit 1
-      interval: 1s
+      interval: 3s
       timeout: 10s
-      retries: 20
-      start_period: 3s
+      retries: 10
+      start_period: 6s
     ports:
       - "8474:7474" # HTTP
       - "8687:7687" # Bolt

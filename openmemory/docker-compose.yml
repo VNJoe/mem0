@@ -5,6 +5,8 @@ services:
       - "6333:6333"
     volumes:
       - mem0_storage:/mem0/storage
+    networks:
+      - proxynet  # Assign this service to the proxynet network
   openmemory-mcp:
     image: mem0/openmemory-mcp
     build: api/
@@ -20,6 +22,8 @@ services:
       - ./api:/usr/src/openmemory
     command: >
       sh -c "uvicorn main:app --host 0.0.0.0 --port 8765 --reload --workers 4"
+    networks:
+      - proxynet  # Assign this service to the proxynet network
   openmemory-ui:
     build:
       context: ui/
@@ -30,6 +34,12 @@ services:
     environment:
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
       - NEXT_PUBLIC_USER_ID=${USER}
+      networks:
+      - proxynet  # Assign this service to the proxynet network
 
 volumes:
   mem0_storage:
+
+networks:
+  proxynet:
+    external: true # This tells Docker Compose that 'proxynet' already exists

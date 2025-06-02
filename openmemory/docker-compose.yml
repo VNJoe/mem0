@@ -12,6 +12,7 @@ services:
     build: api/
     environment:
       - USER
+      - API_KEY
     env_file:
       - api/.env
     depends_on:

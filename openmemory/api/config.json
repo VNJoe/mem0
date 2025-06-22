@@ -1,19 +1,30 @@
 {
     "mem0": {
         "llm": {
-            "provider": "openai",
+            "provider": "azure_openai",
             "config": {
-                "model": "gpt-4o-mini",
+                "model": "YOUR_AOAI_CHAT_COMPLETION_DEPLOYED_MODEL_NAME",
                 "temperature": 0.1,
                 "max_tokens": 2000,
-                "api_key": "env:API_KEY"
+                "azure_kwargs": {
+                    "azure_deployment": "YOUR_AOAI_CHAT_COMPLETION_DEPLOYED_MODEL_NAME",
+                    "api_version": "2024-10-21",
+                    "azure_endpoint": "https://YOUR_RESOURCE_NAME.openai.azure.com/",
+                    "api_key": "YOUR_AZURE_OPENAI_API_KEY"
+                }
             }
         },
         "embedder": {
-            "provider": "openai",
+            "provider": "azure_openai",
             "config": {
-                "model": "text-embedding-3-small",
-                "api_key": "env:API_KEY"
+                "model": "YOUR_AOAI_EMBEDDING_DEPLOYMENT_NAME",
+                "embedding_dims": 1536,
+                "azure_kwargs": {
+                    "api_version": "2024-10-21",
+                    "azure_deployment": "YOUR_AOAI_EMBEDDING_DEPLOYED_MODEL_NAME",
+                    "azure_endpoint": "https://YOUR_RESOURCE_NAME.openai.azure.com/",
+                    "api_key": "YOUR_AZURE_OPENAI_API_KEY"
+                }
             }
         }
     }

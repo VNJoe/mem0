@@ -137,6 +137,7 @@
                           "components/vectordbs/dbs/pgvector",
                           "components/vectordbs/dbs/milvus",
                           "components/vectordbs/dbs/pinecone",
+                          "components/vectordbs/dbs/mongodb",
                           "components/vectordbs/dbs/azure",
                           "components/vectordbs/dbs/redis",
                           "components/vectordbs/dbs/elasticsearch",
@@ -145,7 +146,8 @@
                           "components/vectordbs/dbs/vertex_ai",
                           "components/vectordbs/dbs/weaviate",
                           "components/vectordbs/dbs/faiss",
-                          "components/vectordbs/dbs/langchain"
+                          "components/vectordbs/dbs/langchain",
+                          "components/vectordbs/dbs/baidu"
                         ]
                       }
                     ]
@@ -191,7 +193,8 @@
             "icon": "square-terminal",
             "pages": [
               "openmemory/overview",
-              "openmemory/quickstart"
+              "openmemory/quickstart",
+              "openmemory/integrations"
             ]
           },
           {
@@ -235,6 +238,7 @@
                 "icon": "plug",
                 "pages": [
                   "integrations",
+                  "integrations/agentops",
                   "integrations/vercel-ai-sdk",
                   "integrations/flowise",
                   "integrations/crewai",
